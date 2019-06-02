@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="primary">
+   <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Fund receive setting
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+
+<ion-card  class="datainput">
+<ion-card-header>
+<ion-card-title>
+DASH Testnet
+</ion-card-title>
+</ion-card-header>
+<ion-item>
+<ion-label position="stacked"> Testnet income address </ion-label>
+<ion-input placeholder="Dash testnet address" [(ngModel)]="testreceiveaddress" > </ion-input>
+
+</ion-item>
+<ion-item>
+ <ion-button fill="clear" size="small" color="primary" (click)="savetestnetaddress()"> Save </ion-button>
+ <ion-button fill="clear" size="small" color="primary" (click)="gettestnetbalance()"> Get balance </ion-button>
+</ion-item>
+<ion-item *ngIf="testnetaddressbalance">
+  Balance:  {{testnetaddressbalance.balanceSat}}
+</ion-item>
+</ion-card>
+
+
+<ion-card  class="datainput">
+<ion-card-header>
+<ion-card-title>
+DASH Livenet
+</ion-card-title>
+</ion-card-header>
+<ion-item>
+<ion-label position="stacked"> Livenet income address </ion-label>
+<ion-input placeholder="Dash livenet address" [(ngModel)]="livereceiveaddress" > </ion-input>
+
+</ion-item>
+<ion-item>
+ <ion-button fill="clear" size="small" color="primary" (click)="savelivenetaddress()"> Save </ion-button>
+ <ion-button fill="clear" size="small" color="primary" (click)="getlivenetbalance()"> Get balance </ion-button>
+</ion-item>
+<ion-item *ngIf="livenetaddressbalance">
+  Balance:  {{livenetaddressbalance.balanceSat}}
+</ion-item>
+</ion-card>
+
+</ion-content>
